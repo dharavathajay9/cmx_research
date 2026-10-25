@@ -1,5 +1,5 @@
-#Datasets
-datasets/
+#Datasets — tracked on purpose in this repo (TDD images are research data)
+#datasets/
 
 #Logfiles
 log*/

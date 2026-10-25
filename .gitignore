@@ -20,9 +20,6 @@ __pycache__/
 .ipynb_checkpoints/
 *.egg-info/
 
-# ---- Raw dataset images (kept local, not source code) ----
-datasets/
-
 # ---- Bulk per-sample prediction masks (regenerable dumps) ----
 predictions_*/
 
@@ -37,3 +34,6 @@ predictions_*/
 !research_assets/CMX_Research_Plots/**/*.png
 !research_assets/CMX_Research_Matrices/**/*.png
 !research_assets/CMX_ALL_MODEL_COMPARISON/**/*.png
+
+# ---- TDD dataset images are tracked on purpose ----
+!**/datasets/**/*.png
