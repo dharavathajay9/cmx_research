@@ -4,9 +4,15 @@
 #Logfiles
 log*/
 
-# Weights
+# Weights — model checkpoints are never pushed
 /pretrained
 /weights
+*checkpoints*/
+*.pth
+*.pt
+*.ckpt
+*.onnx
+*.safetensors
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

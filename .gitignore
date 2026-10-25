@@ -1,7 +1,8 @@
 # ============================================================
 # DL/CMX research repo — GitHub push rules
-# Excluded on purpose: model checkpoints, virtualenvs, raw
-# dataset images, bulk prediction/training-log image dumps.
+# Excluded on purpose: model checkpoints, virtualenvs and bulk
+# prediction/training-log image dumps. The TDD dataset images
+# ARE tracked (re-included at the bottom of this file).
 # ============================================================
 
 # ---- Model checkpoints / weights (NOT pushed) ----
