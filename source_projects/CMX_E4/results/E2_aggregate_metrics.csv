@@ -1,0 +1,5 @@
+Metric,Score (%)
+mIoU,62.325
+Frequency-weighted IoU,95.773
+Mean pixel accuracy,72.627
+Pixel accuracy,97.731

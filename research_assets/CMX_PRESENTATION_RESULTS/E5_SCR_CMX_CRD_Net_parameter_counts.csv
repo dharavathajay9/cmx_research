@@ -1,0 +1,4 @@
+project,checkpoint,state_dict_key,tensor_entries,parameter_count_estimate,parameter_count_millions,all_tensor_elements,excluded_buffer_elements
+E5,/home/cse-sdpl/Downloads/CMX_E5/pretraining_backups/e4_epoch-100_initialization.pth,checkpoint.model,869,66758817,66.758817,66763946,5129
+SCR-CMX,/home/cse-sdpl/Downloads/CMX_SCR/_scr_smoke_test/log_TDD_mit_b2_e5/checkpoint/epoch-100.pth,checkpoint.model,869,66758817,66.758817,66763946,5129
+CRD-Net,/home/cse-sdpl/Downloads/CRD_Net/checkpoints/crd_best_miou.pth,checkpoint.model,869,66758817,66.758817,66763946,5129

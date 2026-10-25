@@ -1,0 +1,19 @@
+Model,Split,Status,Project
+E0,train,Completed; metrics parsed,/home/cse-sdpl/Downloads/CMX_Original
+E0,val,Completed; metrics parsed,/home/cse-sdpl/Downloads/CMX_Original
+E0,test,Completed; metrics parsed,/home/cse-sdpl/Downloads/CMX_Original
+E1,train,Completed; metrics parsed,/home/cse-sdpl/Downloads/CMX_E1
+E1,val,Completed; metrics parsed,/home/cse-sdpl/Downloads/CMX_E1
+E1,test,Completed; metrics parsed,/home/cse-sdpl/Downloads/CMX_E1
+E2,train,Completed; metrics parsed,/home/cse-sdpl/Downloads/CMX_E2
+E2,val,Completed; metrics parsed,/home/cse-sdpl/Downloads/CMX_E2
+E2,test,Completed; metrics parsed,/home/cse-sdpl/Downloads/CMX_E2
+E3,train,Completed; metrics parsed,/home/cse-sdpl/Downloads/CMX_E3
+E3,val,Completed; metrics parsed,/home/cse-sdpl/Downloads/CMX_E3
+E3,test,Completed; metrics parsed,/home/cse-sdpl/Downloads/CMX_E3
+E4,train,Completed; metrics parsed,/home/cse-sdpl/Downloads/CMX_E4
+E4,val,Completed; metrics parsed,/home/cse-sdpl/Downloads/CMX_E4
+E4,test,Completed; metrics parsed,/home/cse-sdpl/Downloads/CMX_E4
+E5,train,Completed; metrics parsed,/home/cse-sdpl/Downloads/CMX_E5
+E5,val,Completed; metrics parsed,/home/cse-sdpl/Downloads/CMX_E5
+E5,test,Completed; metrics parsed,/home/cse-sdpl/Downloads/CMX_E5

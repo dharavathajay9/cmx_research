@@ -1,0 +1,4 @@
+Experiment,mIoU (%)
+E0 - Original CMX,62.726
+E1 - FRM Removed,60.944
+E2 - Learnable Weighted Fusion,62.325

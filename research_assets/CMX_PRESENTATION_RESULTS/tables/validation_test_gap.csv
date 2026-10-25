@@ -1,0 +1,2 @@
+Experiment,Train mIoU (%),Validation mIoU (%),Test mIoU (%),Test Metric Source,Parameters (M),Largest Checkpoint (GB),Logs with mIoU,Checkpoints Found,Experiment Directory,Val-Test Gap (pp)
+CRD-Net,,62.1004,56.6385,Previously recorded value; verify dataset/split,,0.7471000729128718,5,8,/home/cse-sdpl/Downloads/CRD_Net,5.4619

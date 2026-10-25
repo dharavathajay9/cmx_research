@@ -1,0 +1,4 @@
+Experiment,Parameters (M),Parameter estimate,Tensor entries,Checkpoint,State dictionary
+E5,66.758817,66758817,869,/home/cse-sdpl/Downloads/CMX_E5/log_TDD_mit_b2_e5/checkpoint/epoch-100.pth,root.model
+SCR-CMX,66.662169,66662169,853,/home/cse-sdpl/Downloads/CMX_SCR/log_TDD_mit_b2_scr/checkpoint/epoch-100.pth,root.model
+CRD-Net,66.758817,66758817,869,/home/cse-sdpl/Downloads/CRD_Net/checkpoints/crd_best_miou.pth,root.model

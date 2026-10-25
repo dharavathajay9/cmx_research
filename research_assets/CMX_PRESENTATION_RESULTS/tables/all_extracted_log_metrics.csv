@@ -1,0 +1,6 @@
+Experiment,Split,mIoU (%),Frequency IoU (%),Mean Pixel Accuracy (%),Pixel Accuracy (%),Epoch,Source File
+CRD-Net,val,61.0326,,,,4,/home/cse-sdpl/Downloads/CRD_Net/logs/crd_smoke_test_epoch4.log
+CRD-Net,val,61.0326,,,,5,/home/cse-sdpl/Downloads/CRD_Net/logs/crd_fresh_training.log
+CRD-Net,val,61.0326,,,,5,/home/cse-sdpl/Downloads/CRD_Net/logs/crd_full_training.log
+CRD-Net,val,62.6627,,,,100,/home/cse-sdpl/Downloads/CRD_Net/logs/crd_fresh_100_epochs_20261024_181703.log
+CRD-Net,val,62.1004,,,,100,/home/cse-sdpl/Downloads/CRD_Net/logs/train_crd.log

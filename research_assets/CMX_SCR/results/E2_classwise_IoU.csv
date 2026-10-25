@@ -1,0 +1,10 @@
+Class,IoU (%)
+unlabeled,97.783
+car,86.555
+person,71.449
+bike,73.042
+curve,38.948
+car_stop,41.058
+guardrail,45.47
+color_cone,58.579
+bump,48.038

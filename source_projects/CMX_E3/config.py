@@ -1,0 +1,183 @@
+
+import os
+import os.path as osp
+import sys
+import time
+import numpy as np
+from easydict import EasyDict as edict
+import argparse
+
+C = edict()
+config = C
+cfg = C
+
+C.seed = 12345
+
+# ============================================================
+# ROOT DIRECTORY
+# ============================================================
+C.root_dir = os.path.abspath(os.getcwd())
+C.abs_dir = osp.realpath(".")
+
+# ============================================================
+# DATASET CONFIGURATION: TDD RGB-THERMAL
+# ============================================================
+C.dataset_name = 'TDD'
+C.dataset_path = osp.join(C.root_dir, 'datasets', 'TDD')
+
+# RGB images
+C.rgb_root_folder = osp.join(C.dataset_path, 'RGB')
+C.rgb_format = '.png'
+
+# Ground-truth segmentation labels
+C.gt_root_folder = osp.join(C.dataset_path, 'Label')
+C.gt_format = '.png'
+C.gt_transform = True
+
+# Thermal images
+C.x_root_folder = osp.join(C.dataset_path, 'Thermal')
+C.x_format = '.png'
+C.x_is_single_channel = True
+
+# Dataset split files
+C.train_source = osp.join(C.dataset_path, 'train.txt')
+C.eval_source = osp.join(C.dataset_path, 'val.txt')
+C.test_source = osp.join(C.dataset_path, 'test.txt')
+C.is_test = False
+
+# Dataset sizes
+C.num_train_imgs = 1568
+C.num_eval_imgs = 392
+
+# Nine classes: IDs 0 through 8
+C.num_classes = 9
+C.class_names = [
+    'unlabeled',
+    'car',
+    'person',
+    'bike',
+    'curve',
+    'car_stop',
+    'guardrail',
+    'color_cone',
+    'bump'
+]
+
+# ============================================================
+# IMAGE CONFIGURATION
+# ============================================================
+C.background = 255
+C.image_height = 480
+C.image_width = 640
+
+# RGB normalization
+C.norm_mean = np.array([0.485, 0.456, 0.406])
+C.norm_std = np.array([0.229, 0.224, 0.225])
+
+# ============================================================
+# NETWORK CONFIGURATION
+# ============================================================
+# Network Configuration
+C.backbone = 'mit_b2_e3'
+
+C.pretrained_model = osp.join(
+    C.root_dir,
+    'pretrained',
+    'segformer',
+    'mit_b2.pth'
+)
+
+C.decoder = 'MLPDecoder'
+C.decoder_embed_dim = 512
+C.optimizer = 'AdamW'
+# ============================================================
+# TRAINING CONFIGURATION
+# ============================================================
+C.lr = 6e-5
+C.lr_power = 0.9
+C.momentum = 0.9
+C.weight_decay = 0.01
+
+# Suitable initial batch size for a 16 GB GPU.
+# Reduce to 1 if CUDA runs out of memory.
+C.batch_size = 2
+C.nepochs = 100
+C.niters_per_epoch = C.num_train_imgs // C.batch_size + 1
+C.num_workers = 4
+
+C.train_scale_array = [0.5, 0.75, 1, 1.25, 1.5, 1.75]
+C.warm_up_epoch = 10
+
+C.fix_bias = True
+C.bn_eps = 1e-3
+C.bn_momentum = 0.1
+
+# ============================================================
+# EVALUATION CONFIGURATION
+# ============================================================
+C.eval_iter = 25
+C.eval_stride_rate = 2 / 3
+C.eval_scale_array = [1]
+C.eval_flip = False
+C.eval_crop_size = [480, 640]
+
+# ============================================================
+# CHECKPOINT CONFIGURATION
+# ============================================================
+C.checkpoint_start_epoch = 1
+C.checkpoint_step = 5
+
+# ============================================================
+# PYTHON IMPORT PATH
+# ============================================================
+def add_path(path):
+    if path not in sys.path:
+        sys.path.insert(0, path)
+
+add_path(C.root_dir)
+
+# ============================================================
+# LOGGING CONFIGURATION
+# ============================================================
+C.log_dir = osp.abspath(
+    'log_' + C.dataset_name + '_' + C.backbone
+)
+
+C.tb_dir = osp.join(C.log_dir, 'tb')
+C.log_dir_link = C.log_dir
+C.checkpoint_dir = osp.join(C.log_dir, 'checkpoint')
+
+exp_time = time.strftime('%Y_%m_%d_%H_%M_%S', time.localtime())
+
+C.log_file = osp.join(
+    C.log_dir, 'log_' + exp_time + '.log'
+)
+C.link_log_file = osp.join(C.log_dir, 'log_last.log')
+
+C.val_log_file = osp.join(
+    C.log_dir, 'val_' + exp_time + '.log'
+)
+C.link_val_log_file = osp.join(C.log_dir, 'val_last.log')
+
+# ============================================================
+# CONFIGURATION TEST
+# ============================================================
+if __name__ == '__main__':
+    print('Dataset:', C.dataset_name)
+    print('Dataset path:', C.dataset_path)
+    print('Backbone:', C.backbone)
+    print('Pretrained weights:', C.pretrained_model)
+    print('Number of classes:', C.num_classes)
+    print('Training images:', C.num_train_imgs)
+    print('Validation images:', C.num_eval_imgs)
+    print('Batch size:', C.batch_size)
+    print('Epochs:', C.nepochs)
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        '-tb',
+        '--tensorboard',
+        default=False,
+        action='store_true'
+    )
+    args = parser.parse_args()

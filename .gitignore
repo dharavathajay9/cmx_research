@@ -1,0 +1,39 @@
+# ============================================================
+# DL/CMX research repo — GitHub push rules
+# Excluded on purpose: model checkpoints, virtualenvs, raw
+# dataset images, bulk prediction/training-log image dumps.
+# ============================================================
+
+# ---- Model checkpoints / weights (NOT pushed) ----
+*.pth
+*.pt
+*.ckpt
+*.onnx
+*.safetensors
+
+# ---- Python environments & caches ----
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+*.egg-info/
+
+# ---- Raw dataset images (kept local, not source code) ----
+datasets/
+
+# ---- Bulk per-sample prediction masks (regenerable dumps) ----
+predictions_*/
+
+# ---- Bulk image dumps: everything png is excluded first... ----
+*.png
+
+# ---- ...then only the curated result figures are re-included ----
+!**/results/**/*.png
+!**/comparison_results/**/*.png
+!**/CMX_E0_E5_ALL_GRAPHS/**/*.png
+!research_assets/CMX_PRESENTATION_RESULTS/**/*.png
+!research_assets/CMX_Research_Plots/**/*.png
+!research_assets/CMX_Research_Matrices/**/*.png
+!research_assets/CMX_ALL_MODEL_COMPARISON/**/*.png

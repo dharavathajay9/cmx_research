@@ -1,0 +1,5 @@
+Experiment,mIoU (%),Pixel Accuracy (%),Mean Pixel Accuracy (%),Frequency Weighted IoU (%)
+E0,92.72,99.535,96.772,99.092
+E1,93.043,99.557,96.913,99.134
+E2,92.646,99.528,96.752,99.08
+E3,94.915,99.67,97.607,99.351
