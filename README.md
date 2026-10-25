@@ -31,11 +31,29 @@ Each experiment under `source_projects/` is self-contained: `config.py`,
 
 - **Model checkpoints / weights** — `*.pth`, `*.pt`, `*.ckpt`, `*.onnx`, `*.safetensors` (~190 GB)
 - **Python virtualenvs and caches** — `.venv/`, `__pycache__/`, `*.pyc`
-- **Raw dataset images** — `datasets/` (TDD RGB/Thermal/Label images, ~1 GB per copy)
 - **Bulk per-sample prediction masks** — `predictions_*/` (regenerable dumps)
-- **Bulk training-log image dumps** — everything `*.png`, *except* the curated
-  result figures re-included below (`results/`, `comparison_results/`,
-  `CMX_E0_E5_ALL_GRAPHS/`, `research_assets/` figure folders)
+- **Bulk training-log image dumps** — everything `*.png`, *except* the
+  re-included folders below: `datasets/` (TDD images), `results/`,
+  `comparison_results/`, `CMX_E0_E5_ALL_GRAPHS/`, and the
+  `research_assets/` figure folders
+
+**Tracked data:** the TDD dataset (`datasets/TDD/{RGB,Thermal,Label}` —
+7062 files plus the train/val/test split lists, ~978 MB per copy, in
+`CMX_Original` and `CMX_E3`) is committed on purpose so a fresh clone is
+self-contained.
 
 Everything else — code, notebooks, logs, CSV/JSON metrics, reports and the
-curated comparison figures — is tracked.
+curated comparison figures — is tracked. The environment is pinned in
+`requirements.txt` (Python 3.10, torch 2.14.1, timm 1.0.30).
+
+## Standalone per-experiment repositories
+
+Each experiment is also published on its own, split from this tree:
+
+- [`cmx_e0`](https://github.com/dharavathajay9/cmx_e0) — `source_projects/CMX_Original`
+- [`cmx_e1`](https://github.com/dharavathajay9/cmx_e1) — `source_projects/CMX_E1`
+- [`cmx_e2`](https://github.com/dharavathajay9/cmx_e2) — `source_projects/CMX_E2`
+- [`cmx_e3`](https://github.com/dharavathajay9/cmx_e3) — `source_projects/CMX_E3`
+- [`cmx_e4`](https://github.com/dharavathajay9/cmx_e4) — `source_projects/CMX_E4`
+- [`cmx_e5`](https://github.com/dharavathajay9/cmx_e5) — `source_projects/CMX_E5`
+- [`crd_net`](https://github.com/dharavathajay9/crd_net) — `source_projects/CRD_Net`
