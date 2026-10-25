@@ -1,0 +1,45 @@
+# =====================================================================
+# CMX RGB–Thermal research environment
+#
+# Verified with: Python 3.10.21 in conda env `cmx` (CUDA 13.x wheels).
+#
+#     conda create -n cmx python=3.10 -y
+#     conda activate cmx
+#     pip install -r requirements.txt
+#
+# Every pin below is the exact version the experiments were run with
+# (pip freeze of the `cmx` environment). The CUDA/nvidia-* wheels are
+# pulled in automatically by the torch wheel on Linux+GPU.
+#
+# The upstream per-project lists live in source_projects/*/requirements.txt
+# and are fully satisfied by these pins.
+# =====================================================================
+
+# --- Deep learning core -----------------------------------------------
+torch==2.14.1
+torchvision==0.29.1
+triton==3.8.0
+timm==1.0.30
+safetensors==0.8.0
+
+# --- Numerics / vision ------------------------------------------------
+numpy==2.2.6
+scipy==1.15.3
+opencv-python==5.0.0.93
+pillow==12.3.0
+
+# --- CMX project dependencies (from the upstream requirements.txt) ----
+easydict==1.13
+tqdm==4.70.1
+tensorboard==2.21.0
+tensorboardX==2.6.5
+
+# --- Analysis, plotting, tables ---------------------------------------
+matplotlib==3.10.9
+pandas==2.3.3
+openpyxl==3.1.5
+PyYAML==6.0.3
+
+# --- Notebooks (Jupyter kernel "Python (CMX)") -------------------------
+ipykernel==7.3.0
+ipython==8.39.0
